@@ -36,12 +36,14 @@ const StudentListComponent: React.FC<StudentListComponentProps> = observer(
       lastname: string,
       id: string,
       joining_date: string,
+      profile_pic: string,
     ) => {
       navigation.navigate('UpcomingNotesScreen', {
         firstname,
         lastname,
         id,
         joining_date,
+        profile_pic,
       });
     };
 
@@ -88,7 +90,9 @@ const StudentListComponent: React.FC<StudentListComponentProps> = observer(
             <View>
               {item.parent_details.map((subItem: any, subIndex: number) => (
                 <View key={subIndex} style={styles.parentDetails}>
-                  <Text style={styles.parentText}>Parent {subItem.type}</Text>
+                  <Text style={styles.parentText}>
+                    {subItem.firstname} {subItem.type}
+                  </Text>
                   <Pressable
                     onPress={() => {
                       const phoneNumber = subItem.phone;
@@ -108,7 +112,6 @@ const StudentListComponent: React.FC<StudentListComponentProps> = observer(
               ))}
             </View>
 
-            {/* Alerts section */}
             <View
               style={[
                 styles.buttonContainer,
@@ -265,6 +268,7 @@ const StudentListComponent: React.FC<StudentListComponentProps> = observer(
                         item.lastname,
                         item.id,
                         item.joining_date,
+                        profile_pic,
                       )
                     }>
                     <Text style={styles.footerButtonText}>Upcoming Events</Text>

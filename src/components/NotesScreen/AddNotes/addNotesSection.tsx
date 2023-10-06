@@ -19,7 +19,7 @@ import {
   FlagSetType,
   FlagUnSetType,
 } from '../../../utils/FlagRadioButton/flagRadioButton';
-import { addNotesStore } from '../../../Store/AddNotesStore/addNotesStore';
+import {addNotesStore} from '../../../Store/AddNotesStore/addNotesStore';
 
 interface AddNotesProps {
   id: number;
@@ -306,7 +306,7 @@ const AddNotesSection: React.FC<AddNotesProps> = observer(({id}) => {
         <View style={styles.textInputContainer}>
           <TextInput
             multiline
-            placeholder="Group Feedback"
+            placeholder="Please enter the notes here"
             style={styles.textInput}
             value={studentNotes}
             onChangeText={text => setStudentNotes(text)}

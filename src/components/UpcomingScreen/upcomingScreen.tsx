@@ -16,7 +16,7 @@ import {styles} from './upcomingScreenStyle';
 
 const UpcomingScreen = observer(() => {
   const route = useRoute();
-  const {firstname, lastname, id, joining_date} = route.params;
+  const {firstname, lastname, id, joining_date, profile_pic} = route.params;
   const [activeComponent, setActiveComponent] = useState('UpcomingEvents');
 
   const switchToUpcomingEvents = () => {
@@ -31,14 +31,10 @@ const UpcomingScreen = observer(() => {
     <SafeAreaView style={styles.safeAreaView}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View style={styles.topBar}>
-          {/* <ImageBackground
-            source={topBatPatten}
-            resizeMode="contain"
-            style={styles.image}></ImageBackground> */}
           <View style={styles.headerImage}>
             <Image
               source={{
-                uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrTZiZDXN4U0RxYYPF9JnclsE5iMQ1TV1-3w&usqp=CAU',
+                uri: profile_pic,
               }}
               style={{
                 width: 86,
