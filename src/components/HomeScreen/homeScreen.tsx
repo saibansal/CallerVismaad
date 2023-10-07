@@ -98,7 +98,7 @@ const StudentList = observer(() => {
               borderRadius: 10,
             }}>
             <TextInput
-              placeholder="Type First 3 Letter of Your Name"
+              placeholder="Please type your Name"
               style={styles.inputStyles}
               onChangeText={text => homePageStore.setSearchQuery(text)}
               value={homePageStore.searchQuery}
