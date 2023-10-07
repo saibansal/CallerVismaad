@@ -51,4 +51,13 @@ export const styles = StyleSheet.create({
     lineHeight: 20,
     overflow: 'hidden',
   },
+  viewMoreButton: {
+    marginTop: 8,
+    paddingTop: 5,
+    borderRadius: 5,
+  },
+  viewMoreButtonText: {
+    color: '#B6488D',
+    fontWeight: 'bold',
+  },
 });

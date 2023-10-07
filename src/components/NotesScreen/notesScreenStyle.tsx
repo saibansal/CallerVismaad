@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   safeAreaView: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
   },
   header: {
     backgroundColor: '#b6488d',
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     fontSize: 30,
   },
   parentRow: {
-    padding: 20,
+    padding: 25,
     borderRadius: 10,
     marginBottom: 20,
   },

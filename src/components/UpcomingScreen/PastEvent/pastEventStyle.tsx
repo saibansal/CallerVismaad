@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   saferView: {
     height: '100%',
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
   },
   button: {
     marginBottom: 10,

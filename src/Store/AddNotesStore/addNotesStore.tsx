@@ -12,6 +12,7 @@ class AddNotesStore {
   flagSetDate: Date | null = null;
   flagUnsetDate: Date | null = null;
   errorMessage: string = '';
+  expandedIndex: number | null = null;
 
   constructor() {
     makeObservable(this, {
@@ -26,13 +27,14 @@ class AddNotesStore {
       selectedSetTypeFlag: observable,
       showFlagSetDatePicker: observable,
       showFlagUnsetDatePicker: observable,
+      expandedIndex: observable,
+      toggleAccordion: action.bound,
       setAddNotesData: action.bound,
       setStudentNotes: action.bound,
       setFlagSetDate: action.bound,
       setFlagUnsetDate: action.bound,
       setErrorMessage: action.bound,
       setIsLoading: action.bound,
-
       setSelectedFlag: action.bound,
       setSelectedUnSetTypeFlag: action.bound,
       setSelectedSetTypeFlag: action.bound,
@@ -80,6 +82,13 @@ class AddNotesStore {
 
   setErrorMessage(message: string) {
     this.errorMessage = message;
+  }
+  toggleAccordion(index: number) {
+    if (this.expandedIndex === index) {
+      this.expandedIndex = null;
+    } else {
+      this.expandedIndex = index;
+    }
   }
 }
 

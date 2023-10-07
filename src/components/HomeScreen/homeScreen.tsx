@@ -43,23 +43,9 @@ const StudentList = observer(() => {
         if (response.ok) {
           const responseData = await response.json();
           const students = responseData.data || [];
-
-          if (homePageStore.searchQuery.length >= 3) {
-            const searchQueryLowerCase =
-              homePageStore.searchQuery.toLowerCase();
-
-            const filteredStudents = students.filter((student: any) => {
-              const firstNameLowerCase = student.firstname.toLowerCase();
-              return (
-                firstNameLowerCase.startsWith(searchQueryLowerCase) ||
-                student.firstname.startsWith(homePageStore.searchQuery)
-              );
-            });
-
-            homePageStore.setStudentData(filteredStudents);
-          } else {
-            homePageStore.setStudentData([]);
-          }
+          const profilePic = responseData.profile_pic;
+          homePageStore.setProfilePic(profilePic);
+          homePageStore.setStudentData(students);
         } else {
           console.error(`Error: ${response.status} - ${response.statusText}`);
           const errorMessage = `Error: ${response.status} - ${response.statusText}`;

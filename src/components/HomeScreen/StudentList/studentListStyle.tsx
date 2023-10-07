@@ -15,8 +15,9 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
   },
   parentText: {
-    fontSize: 15,
+    fontSize: 17,
     color: '#262B35',
+    fontWeight: 'normal',
   },
   studentFlags: {
     maxWidth: 47,
@@ -97,6 +98,8 @@ export const styles = StyleSheet.create({
   footerButtons: {
     flex: 1,
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   footerButton: {
     marginRight: 10,

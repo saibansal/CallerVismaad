@@ -3,7 +3,6 @@ import {observer} from 'mobx-react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import UpdateUpcomingAttendance from '../../UpdateAttendanceScreen/updateUpcomingAttendance';
 
-import {styles} from '../PastEvent/pastEventStyle';
 import {
   View,
   Text,
@@ -13,6 +12,7 @@ import {
   ToastAndroid,
 } from 'react-native';
 import {upcomingEventStore} from '../../../Store/UpcomingEventStore/upComingEventStore';
+import {styles} from './upcomingEventStyle';
 interface UpcomingEventProps {
   id: number;
 }
@@ -65,7 +65,7 @@ const UpcomingEvents: React.FC<UpcomingEventProps> = observer(({id}) => {
   const arrayLength = upcomingEventStore.upcomingEventDetails.length;
 
   return (
-    <SafeAreaView style={styles.saferView}>
+    <SafeAreaView style={styles.safeAreaView}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         {upcomingEventStore.isLoading ? (
           <ActivityIndicator size="large" color="#B6488D" />

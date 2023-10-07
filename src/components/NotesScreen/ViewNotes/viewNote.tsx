@@ -3,6 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {observer} from 'mobx-react';
 import {styles} from './viewNotesStyle';
+import {addNotesStore} from '../../../Store/AddNotesStore/addNotesStore';
 
 import {
   View,
@@ -13,7 +14,6 @@ import {
   TouchableOpacity,
   ToastAndroid,
 } from 'react-native';
-import {addNotesStore} from '../../../Store/AddNotesStore/addNotesStore';
 
 interface ViewNotesProps {
   id: number;
@@ -61,6 +61,10 @@ export const ViewNotes: React.FC<ViewNotesProps> = observer(({id}) => {
   useEffect(() => {
     fetchStudentData();
   }, [id]);
+
+  const toggleAccordion = (index: number) => {
+    addNotesStore.toggleAccordion(index);
+  };
 
   return (
     <SafeAreaView>
@@ -145,12 +149,25 @@ export const ViewNotes: React.FC<ViewNotesProps> = observer(({id}) => {
                       {')'}
                     </Text>
                   </Text>
-                  <Text
-                    numberOfLines={2}
-                    ellipsizeMode="tail"
-                    style={styles.eventSubDetail}>
-                    {item.notes}
-                  </Text>
+                  {addNotesStore.expandedIndex === index ? (
+                    <Text style={styles.eventSubDetail}>{item.notes}</Text>
+                  ) : (
+                    <Text
+                      numberOfLines={1}
+                      ellipsizeMode="tail"
+                      style={styles.eventSubDetail}>
+                      {item.notes}
+                    </Text>
+                  )}
+                  <TouchableOpacity
+                    onPress={() => toggleAccordion(index)}
+                    style={styles.viewMoreButton}>
+                    <Text style={styles.viewMoreButtonText}>
+                      {addNotesStore.expandedIndex === index
+                        ? 'View Less..'
+                        : 'View More..'}
+                    </Text>
+                  </TouchableOpacity>
                 </View>
               </View>
             ))}

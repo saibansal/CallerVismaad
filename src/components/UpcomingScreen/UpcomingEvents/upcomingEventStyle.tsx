@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   pageHeadingRow: {
     width: '100%',
     paddingRight: 0,
@@ -8,6 +8,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: 'row',
+  },
+  safeAreaView: {
+    flex: 1,
+    // backgroundColor: '#fff',
   },
   pageHeading: {
     width: '100%',
@@ -19,11 +23,6 @@ const styles = StyleSheet.create({
     color: '#B6488D',
     fontSize: 23,
   },
-
-  saferView: {
-    height: '100%',
-    backgroundColor: '#fff',
-  },
   eventCounting: {
     color: '#202B37',
   },
@@ -31,6 +30,7 @@ const styles = StyleSheet.create({
     padding: 25,
     borderRadius: 20,
     marginBottom: 15,
+    borderRadius: 25,
     backgroundColor: '#D9EFFF',
   },
   eventLeft: {
@@ -46,5 +46,53 @@ const styles = StyleSheet.create({
     color: '#262B35',
     fontSize: 15,
     lineHeight: 20,
+  },
+  iconStyle: {
+    backgroundColor: '#0073DA',
+    borderRadius: 50,
+    height: 44,
+    width: 44,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#fff',
+    fontSize: 16,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  sectionHeading: {
+    color: '#0073DA',
+    paddingTop: 5,
+    paddingBottom: 5,
+    fontSize: 20,
+  },
+  attendenceButton: {
+    marginLeft: 25,
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingTop: 5,
+  },
+  attendenceButtonContent: {
+    backgroundColor: '#B6488D',
+    borderRadius: 5,
+    width: 'auto',
+    color: '#fff',
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
 });

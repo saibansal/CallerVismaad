@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   ToastAndroid,
+  Pressable,
 } from 'react-native';
 import React, {useEffect} from 'react';
 import {observer} from 'mobx-react';
@@ -74,7 +75,7 @@ const PastEvent: React.FC<PastEventProps> = observer(({id}) => {
 
   return (
     <SafeAreaView style={[styles.saferView]}>
-      <ScrollView contentInsetAdjustmentBehavior="automatic" style={{}}>
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
         {upcomingEventStore.isLoading ? (
           <ActivityIndicator size="large" color="#B6488D" />
         ) : (
@@ -111,11 +112,15 @@ const PastEvent: React.FC<PastEventProps> = observer(({id}) => {
                     </Text>
                   </View>
                   <View style={{alignItems: 'center'}}>
-                    <TouchableOpacity
+                    <Pressable
                       style={styles.iconStyle}
                       onPress={() => toggleAccordion(index)}>
-                      <Icon name="plus" size={18} style={{color: '#fff'}} />
-                    </TouchableOpacity>
+                      {upcomingEventStore.expandedIndex === index ? (
+                        <Icon name="minus" size={18} style={{color: '#fff'}} />
+                      ) : (
+                        <Icon name="plus" size={18} style={{color: '#fff'}} />
+                      )}
+                    </Pressable>
                   </View>
                 </View>
                 {upcomingEventStore.expandedIndex === index && (
@@ -197,9 +202,6 @@ const PastEvent: React.FC<PastEventProps> = observer(({id}) => {
                           </View>
                         ) : null}
                       </View>
-                      {/* lesson notes section finish */}
-
-                      {/* Lesson Feedback section stats */}
                       <View style={styles.lessonContent}>
                         <Text style={styles.sectionHeading}>
                           Lesson Feedback

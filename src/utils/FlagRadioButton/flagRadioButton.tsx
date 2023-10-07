@@ -4,7 +4,7 @@ export const FlagNotes = [
     label: 'No Flag',
     value: 'no_flag',
     color: 'black',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
 
@@ -13,7 +13,7 @@ export const FlagNotes = [
     label: 'Gray',
     value: 'gray',
     color: '#CFCFCF',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
   {
@@ -21,7 +21,7 @@ export const FlagNotes = [
     label: 'Blue',
     value: 'blue',
     color: '#057FE1',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
   {
@@ -29,7 +29,7 @@ export const FlagNotes = [
     label: 'Yellow',
     value: 'yellow',
     color: '#FFC107',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
   {
@@ -37,7 +37,7 @@ export const FlagNotes = [
     label: 'Red',
     value: 'red',
     color: '#E91919',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
   {
@@ -45,7 +45,7 @@ export const FlagNotes = [
     label: 'Green',
     value: 'green',
     color: '#009688',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
   {
@@ -53,7 +53,7 @@ export const FlagNotes = [
     label: 'Purple',
     value: 'purple',
     color: '#9C27B0',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
   {
@@ -61,7 +61,15 @@ export const FlagNotes = [
     label: 'Orange',
     value: 'orange',
     color: '#FF5722',
-    size: 17,
+    size: 16,
+    borderSize: 2,
+  },
+  {
+    id: '12',
+    label: 'Pink',
+    value: 'pink',
+    size: 16,
+    color: '#E91E63',
     borderSize: 2,
   },
   {
@@ -69,7 +77,7 @@ export const FlagNotes = [
     label: 'Brown',
     value: 'brown',
     color: '#795548',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
   {
@@ -77,15 +85,7 @@ export const FlagNotes = [
     label: 'Golden',
     value: 'golden',
     color: '#DB8301',
-    size: 17,
-    borderSize: 2,
-  },
-  {
-    id: '12',
-    label: 'Pink',
-    value: 'pink',
-    size: 17,
-    color: '#E91E63',
+    size: 16,
     borderSize: 2,
   },
   {
@@ -93,7 +93,7 @@ export const FlagNotes = [
     label: 'New Entry',
     value: 'new_registration',
     color: '#00FFFF',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
 ];
@@ -103,14 +103,14 @@ export const FlagSetType = [
     id: '1',
     label: 'Immediately',
     value: 'immediately',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
   {
     id: '2',
     label: 'Future Date',
     value: 'future_date',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
 ];
@@ -120,14 +120,14 @@ export const FlagUnSetType = [
     id: '1',
     label: 'No Unset Date',
     value: 'no_unset_date',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
   {
     id: '2',
     label: 'Specify Unset Date',
     value: 'specify_unset_date',
-    size: 17,
+    size: 16,
     borderSize: 2,
   },
 ];

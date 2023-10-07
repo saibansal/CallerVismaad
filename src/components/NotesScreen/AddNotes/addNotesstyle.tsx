@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#ECEFF8',
     // paddingHorizontal: 20,
     // paddingTop: 20,
   },
@@ -139,14 +139,13 @@ export const styles = StyleSheet.create({
     // flexWrap: 'wrap',
   },
   radioButton: {
-    width: '30%',
+    width: '100%',
     height: 40,
     justifyContent: 'center',
     margin: 5,
     borderWidth: 1,
     borderColor: 'black',
     borderRadius: 10,
-
     shadowColor: 'black',
     shadowOpacity: 0.8,
     shadowRadius: 2,

@@ -292,7 +292,7 @@ const AddNotesSection: React.FC<AddNotesProps> = observer(({id}) => {
   };
 
   return (
-    <View style={[styles.container, {backgroundColor: '#ECEFF8'}]}>
+    <View style={styles.container}>
       {addNotesStore.isLoading && (
         <ActivityIndicator size="large" color="#B6488D" />
       )}
@@ -313,7 +313,7 @@ const AddNotesSection: React.FC<AddNotesProps> = observer(({id}) => {
           />
         </View>
       </View>
-      <View style={{marginBottom: 10}}>
+      <View>
         <View style={styles.flagNotesContainer}>
           <Text style={styles.flagNotesLabel}>Flag Notes</Text>
           <Text style={styles.flagNotesDescription}>
@@ -341,6 +341,7 @@ const AddNotesSection: React.FC<AddNotesProps> = observer(({id}) => {
 
       <View style={styles.buttonContainer}>
         <Pressable
+          onPress={onPressCancelButton}
           style={({pressed}) => [
             styles.button,
             {
@@ -349,7 +350,7 @@ const AddNotesSection: React.FC<AddNotesProps> = observer(({id}) => {
               borderRadius: 40,
             },
           ]}>
-          <Button title="Skip" onPress={onPressCancelButton} />
+          <Text style={styles.buttonText}>Skip</Text>
         </Pressable>
         <Pressable
           onPress={handleSubmit}

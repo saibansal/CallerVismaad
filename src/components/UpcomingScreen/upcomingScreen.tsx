@@ -13,10 +13,15 @@ import {
   View,
 } from 'react-native';
 import {styles} from './upcomingScreenStyle';
+import {homePageStore} from '../../Store/HomePageStore/storeHomePage';
 
 const UpcomingScreen = observer(() => {
+  const imageUrl =
+    homePageStore.profilePic ||
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTul_uww9SaBJW6cIxV_KEOK0nabcl99DJHeA&usqp=CAU';
+
   const route = useRoute();
-  const {firstname, lastname, id, joining_date, profile_pic} = route.params;
+  const {firstname, lastname, id, joining_date} = route.params;
   const [activeComponent, setActiveComponent] = useState('UpcomingEvents');
 
   const switchToUpcomingEvents = () => {
@@ -33,9 +38,7 @@ const UpcomingScreen = observer(() => {
         <View style={styles.topBar}>
           <View style={styles.headerImage}>
             <Image
-              source={{
-                uri: profile_pic,
-              }}
+              source={{uri: imageUrl}}
               style={{
                 width: 86,
                 height: 86,
@@ -45,6 +48,7 @@ const UpcomingScreen = observer(() => {
                 borderColor: '#fff',
                 borderWidth: 5,
               }}
+              resizeMode="cover"
             />
 
             <View style={{marginLeft: 20}}>
